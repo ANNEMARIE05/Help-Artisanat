@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help'Artisanat</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/inscription.css">
+</head>
+<body>
+    <header class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="../index.html" style="color: #d63384;">Help'Artisanat</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="QSN.html">Qui sommes nous</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Creation.html">Création</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="recherche.html">Rechercher un artisan</a>
+                </li>
+            </ul>
+            <a href="connexion.html"><button class="btn btn-primary mr-2" type="button">Se connecter</button></a>
+            <a href="pack.html"><button class="btn btn-outline-primary" type="button">S'identifier</button></a>
+        </div>
+    </header>
+
+    <section class="inscription">
+        <div class="container">
+            <div class="form-container">
+                <h2>Création d'un artisan</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Nom et Prénom</label>
+                        <input type="text" class="form-control" id="name" placeholder="Entrez votre nom et prénom" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Sexe</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" id="female" value="femme">
+                            <label class="form-check-label" for="female">Femme</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" id="male" value="homme">
+                            <label class="form-check-label" for="male">Homme</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">Ville</label>
+                        <select class="form-control" id="city" required>
+                            <option value="">Sélectionnez votre ville</option>
+                            <option value="Abidjan">Abidjan</option>
+                            <option value="Grand Bassam">Grand Bassam</option>
+                            <option value="Yamoussoukro">Yamoussoukro</option>
+                            <option value="Bouaké">Bouaké</option>
+                            <option value="Daloa">Daloa</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                        <input type="text" class="form-control mt-2" id="other-city" placeholder="Entrez votre ville" style="display: none;">
+                    </div>
+                    <div class="form-group">
+                        <label for="commune">Commune / Village</label>
+                        <select class="form-control" id="commune" required>
+                            <option value="">Sélectionnez votre commune ou village</option>
+                            <option value="Abobo">Abobo</option>
+                            <option value="Adjamé">Adjamé</option>
+                            <option value="Anyama">Anyama</option>
+                            <option value="Attécoubé">Attécoubé</option>
+                            <option value="Cocody">Cocody</option>
+                            <option value="Bingerville">Bingerville</option>
+                            <option value="Koumassi">Koumassi</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                        <input type="text" class="form-control mt-2" id="other-commune" placeholder="Entrez votre commune ou village" style="display: none;">
+                    </div>
+                    <div class="form-group">
+                        <label for="neighborhood">Quartier</label>
+                        <input type="text" class="form-control" id="neighborhood" placeholder="Entrez votre quartier" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Entrez votre email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Numéro de téléphone</label>
+                        <input type="tel" class="form-control" id="phone" placeholder="Entrez votre numéro de téléphone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company-name">Nom de l'entreprise</label>
+                        <input type="text" class="form-control" id="company-name" placeholder="Entrez le nom de votre entreprise" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="business-sector">Secteur d'activité</label>
+                        <input type="text" class="form-control" id="business-sector" placeholder="Entrez votre secteur d'activité" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="business-type">Spécialités ou le type d’activité exercé</label>
+                        <select class="form-control" id="business-type" required>
+                            <option value="">Sélectionnez votre type d’activité</option>
+                            <option value="Mécanique">Mécanique</option>
+                            <option value="Menuiserie/Charpenterie">Menuiserie/Charpenterie</option>
+                            <option value="Maçonnerie">Maçonnerie</option>
+                            <option value="Spécialiste en froid">Spécialiste en froid</option>
+                            <option value="Couture">Couture</option>
+                            <option value="Tapisserie">Tapisserie</option>
+                            <option value="Coiffure">Coiffure</option>
+                            <option value="Bijouterie">Bijouterie</option>
+                            <option value="Electronique (réparateur TV, portable, etc)">Electronique (réparateur TV, portable, etc)</option>
+                            <option value="Briqueterie">Briqueterie</option>
+                            <option value="Boucherie">Boucherie</option>
+                            <option value="Vente de marchandises">Vente de marchandises</option>
+                            <option value="Agroalimentaire, alimentation, restauration">Agroalimentaire, alimentation, restauration</option>
+                            <option value="Vitrerie">Vitrerie</option>
+                            <option value="Hygiène et soins corporels">Hygiène et soins corporels</option>
+                            <option value="Audiovisuel et communication">Audiovisuel et communication</option>
+                            <option value="Transport">Transport</option>
+                            <option value="Artisanat d’art et de décoration">Artisanat d’art et de décoration</option>
+                            <option value="Autres">Autres</option>
+                        </select>
+                        <input type="text" class="form-control mt-2" id="other-business-type" placeholder="Entrez votre type d’activité" style="display: none;">
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Localisation</label>
+                        <div id="map" style="height: 300px; width: 100%;"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="year">L'année d'existence de l'entreprise</label>
+                        <input type="number" class="form-control" id="year" placeholder="Entrez l'année d'existence de l'entreprise" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Valider</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="pt-5 pb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>Help'Artisanat</h5>
+                    <p>
+                        Help'Artisanat est une plateforme dédiée aux artisans. Nous croyons en l'importance de préserver les savoir-faire traditionnels et de soutenir les artisans dans leur démarche créative et entrepreneuriale.
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <h5>INFORMATIONS</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Bons de réduction</a></li>
+                        <li><a href="#" class="text-white">Condition de vente et livraison</a></li>
+                        <li><a href="#" class="text-white">Politique de confidentialité</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contactez-nous</h5>
+                    <ul class="list-unstyled">
+                        <li>Email: contact@helpartisanat-ci.com</li>
+                        <li>Téléphone: +225 00 00 00 00</li>
+                        <li>Adresse: Rue de l'Artisanat, Abidjan, Côte d'Ivoire</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Suivez-nous</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Facebook</a></li>
+                        <li><a href="#" class="text-white">Twitter</a></li>
+                        <li><a href="#" class="text-white">Instagram</a></li>
+                        <li><a href="#" class="text-white">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-6">
+                <div class="col text-center">
+                    <p>&copy; 2024 help’artisanat-ci. Tous droits réservés.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('city').addEventListener('change', function () {
+            var otherCity = document.getElementById('other-city');
+            if (this.value === 'Autre') {
+                otherCity.style.display = 'block';
+            } else {
+                otherCity.style.display = 'none';
+            }
+        });
+
+        document.getElementById('commune').addEventListener('change', function () {
+            var otherCommune = document.getElementById('other-commune');
+            if (this.value === 'Autre') {
+                otherCommune.style.display = 'block';
+            } else {
+                otherCommune.style.display = 'none';
+            }
+        });
+
+        document.getElementById('business-type').addEventListener('change', function () {
+            var otherBusinessType = document.getElementById('other-business-type');
+            if (this.value === 'Autres') {
+                otherBusinessType.style.display = 'block';
+            } else {
+                otherBusinessType.style.display = 'none';
+            }
+        });
+
+        // Initialize and add the map
+        function initMap() {
+            // The location of the center
+            var center = { lat: 5.347, lng: -4.024 };
+            // The map, centered at the center
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 10,
+                center: center
+            });
+            // The marker, positioned at the center
+            var marker = new google.maps.Marker({
+                position: center,
+                map: map
+            });
+
+            // Add a click event listener to place marker
+            map.addListener('click', function (event) {
+                placeMarker(event.latLng);
+            });
+
+            function placeMarker(location) {
+                marker.setPosition(location);
+            }
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+</body>
+</html>

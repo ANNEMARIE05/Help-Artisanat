@@ -1,0 +1,151 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #f8f9fa !important;
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #6c757d;
+    font-weight: 500;
+    margin: 0 10px;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #d63384;
+}
+.navbar-nav .nav-item .nav-link .active{
+    color: #d63384;
+}
+
+.btn-primary {
+    background-color: #d63384;
+    border-color: #d63384;
+}
+
+.btn-primary:hover {
+    background-color: #c31d72;
+    border-color: #c31d72;
+}
+
+.btn-outline-primary {
+    color: #d63384;
+    border-color: #d63384;
+}
+
+.btn-outline-primary:hover {
+    background-color: #d63384;
+    color: #fff;
+}
+.hero-section {
+    background: linear-gradient(to right, #fff, #f8f9fa);
+    padding: 50px 0;
+}
+
+.hero-section h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.hero-section p {
+    font-size: 1rem;
+    color: #555;
+    margin: 20px 0;
+}
+
+.hero-section .btn {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.hero-section .btn:hover {
+    background-color: #444;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+.besoin{
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+.besoin .section-header {
+    margin-bottom: 30px;
+}
+.besoin .image-card {
+    margin-bottom: 20px;
+}
+.besoin .image-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+.besoin .image-card h5 {
+    margin-top: 10px;
+}
+
+.search-section {
+    background-color: #f8f9fa;
+    padding: 70px 0;
+    text-align: center;
+}
+.search-section h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+.search-section .input-group {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+footer {
+    background-color: #000;
+    color: #ffffff;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #d4d4d4;
+}
+
+footer h5 {
+    margin-bottom: 20px;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer .list-unstyled {
+    padding-left: 0;
+}
+
+footer .list-unstyled li {
+    margin-bottom: 10px;
+}
+
+footer .text-center p {
+    margin: 5px 0;
+}

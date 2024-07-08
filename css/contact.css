@@ -1,0 +1,13 @@
+#map {
+    width: 100%;
+    height: 300px;
+}
+
+.container {
+    margin-top: 20px;
+    margin-bottom: 3rem;
+}
+
+h2.text-center {
+    color: #d63384;
+}

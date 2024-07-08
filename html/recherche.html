@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help'Artisanat - Contact</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/contact.css">
+</head>
+<body>
+    <header class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="../index.html" style="color: #d63384;">Help'Artisanat</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="QSN.html">Qui sommes nous</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Creation.html">Création</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="recherche.html">Rechercher un artisan</a>
+                </li>
+            </ul>
+            <a href="connexion.html"><button class="btn btn-primary mr-2" type="button">Se connecter</button></a>
+            <a href="pack.html"><button class="btn btn-outline-primary" type="button">S'identifier</button></a>
+        </div>
+    </header>
+
+    <div class="container mt-4">
+        <h2 class="mb-4 text-center">Contactez-nous</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Formulaire de Contact</h5>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Nom</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" id="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Envoyer</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h5>Nos Coordonnées</h5>
+                <ul class="list-unstyled">
+                    <li>Email: contact@helpartisanat-ci.com</li>
+                    <li>Téléphone: +225 00 00 00 00</li>
+                    <li>Adresse: Rue de l'Artisanat, Abidjan, Côte d'Ivoire</li>
+                </ul>
+                <h5>Localisation</h5>
+                <div id="map" style="height: 300px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="pt-5 pb-4 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>Help'Artisanat</h5>
+                    <p>
+                        Help'Artisanat est une plateforme dédiée aux artisans. Nous croyons en l'importance de préserver les savoir-faire traditionnels et de soutenir les artisans dans leur démarche créative et entrepreneuriale.
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <h5>INFORMATIONS</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-dark">Bons de réduction</a></li>
+                        <li><a href="#" class="text-dark">Condition de vente et livraison</a></li>
+                        <li><a href="#" class="text-dark">Politique de confidentialité</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contactez-nous</h5>
+                    <ul class="list-unstyled">
+                        <li>Email: contact@helpartisanat-ci.com</li>
+                        <li>Téléphone: +225 00 00 00 00</li>
+                        <li>Adresse: Rue de l'Artisanat, Abidjan, Côte d'Ivoire</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Suivez-nous</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-dark">Facebook</a></li>
+                        <li><a href="#" class="text-dark">Twitter</a></li>
+                        <li><a href="#" class="text-dark">Instagram</a></li>
+                        <li><a href="#" class="text-dark">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col text-center">
+                    <p>&copy; 2024 help’artisanat-ci. Tous droits réservés.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Initialize and add the map
+        function initMap() {
+            var center = { lat: 5.347, lng: -4.024 };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 10,
+                center: center
+            });
+            var marker = new google.maps.Marker({
+                position: center,
+                map: map
+            });
+
+            // Add a click event listener to place marker
+            map.addListener('click', function (event) {
+                placeMarker(event.latLng);
+            });
+
+            function placeMarker(location) {
+                marker.setPosition(location);
+            }
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+</body>
+</html>
