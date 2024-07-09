@@ -6,6 +6,7 @@
     <title>Help'Artisanat</title>
     <link rel="icon" href="https://img.freepik.com/photos-gratuite/cruche-inachevee_1098-13687.jpg?uid=R99967860&ga=GA1.1.1477675911.1719911554&semt=ais_user" type="">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="inscription.css">
 </head>
@@ -137,31 +138,6 @@
                         <input type="tel" class="form-control" id="whatsapp" placeholder="Entrez votre numéro WhatsApp" required>
                     </div>
                     <div class="form-group">
-                        <label for="location">Localisation</label>
-                        <div id="map" style="height: 300px; width: 100%;"></div>
-                    </div>
-                    <div class="form-group">
-                        <label for="année">L'année d'existence de l'entreprise</label>
-                        <input type="number" class="form-control" id="année" placeholder="Entrez l'année d'existence de l'entreprise" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="certificat">Possession de certificat</label>
-                        <select class="form-control" id="certificat" required>
-                            <option value="">Sélectionnez une option</option>
-                            <option value="oui">Oui</option>
-                            <option value="non">Non</option>
-                        </select>
-                        <input type="file" class="form-control mt-2" id="certificat-file" style="display: none;" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="couverture">Zone de couverture</label>
-                        <input type="text" class="form-control" id="couverture" placeholder="Entrez la zone de couverture" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="motivation">Motivation à rejoindre Help'Artisanat</label>
-                        <textarea class="form-control" id="motivation" rows="3" placeholder="Décrivez votre motivation" required></textarea>
-                    </div>
-                    <div class="form-group">
                         <label for="année">Moyen de paiement</label>
                         <select class="form-control" id="business-type" required>
                             <option value="">Sélectionnez votre pack</option>
@@ -169,7 +145,11 @@
                             <option value="Menuiserie/Charpenterie">Mois</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary">Soumettre</button>
+                    <div class="form-group">
+                        <label for="location">Localisation</label>
+                        <div id="map" style="height: 400px;"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">S'inscrire</button>
                 </form>
             </div>
         </div>
@@ -217,66 +197,52 @@
             </div>
         </div>
     </footer>
-    
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
-
-
-        function initMap() {
-            var center = { lat: 5.347, lng: -4.024 };
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 10,
-                center: center
-            });
-            var marker = new google.maps.Marker({
-                position: center,
-                map: map
-            });
-            map.addListener('click', function (event) {
-                placeMarker(event.latLng);
-            });
-
-            function placeMarker(location) {
-                marker.setPosition(location);
-            }
-        }
         $(document).ready(function () {
             $('#ville').change(function () {
                 if ($(this).val() === 'Autre') {
-                    $('#autre-ville').show();
+                    $('#autre-ville').show().prop('required', true);
                 } else {
-                    $('#autre-ville').hide();
+                    $('#autre-ville').hide().prop('required', false);
                 }
             });
 
             $('#commune').change(function () {
                 if ($(this).val() === 'Autre') {
-                    $('#autre-commune').show();
+                    $('#autre-commune').show().prop('required', true);
                 } else {
-                    $('#autre-commune').hide();
+                    $('#autre-commune').hide().prop('required', false);
                 }
             });
 
             $('#business-type').change(function () {
                 if ($(this).val() === 'Autres') {
-                    $('#autre-business-type').show();
+                    $('#autre-business-type').show().prop('required', true);
                 } else {
-                    $('#autre-business-type').hide();
+                    $('#autre-business-type').hide().prop('required', false);
                 }
             });
 
-            $('#certificat').change(function () {
-                if ($(this).val() === 'oui') {
-                    $('#certificat-file').show();
-                } else {
-                    $('#certificat-file').hide();
-                }
+            var map = L.map('map').setView([5.345317, -4.024429], 13);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            var marker = L.marker([5.345317, -4.024429]).addTo(map)
+                .bindPopup('Position approximative.')
+                .openPopup();
+
+            map.on('click', function(e) {
+                marker.setLatLng(e.latlng)
+                    .bindPopup('Vous avez cliqué ici : ' + e.latlng.toString())
+                    .openPopup();
             });
         });
     </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
 </body>
 </html>

@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 300px;
+        }
+    </style>
 </head>
 <body>
     <header class="navbar navbar-expand-lg navbar-light bg-light">
@@ -41,7 +47,7 @@
         <h2 class="mb-4">Contactez-nous</h2>
         <div class="row">
             <div class="col-md-6">
-                <h5>Formulaire de Contact</h5>
+                <h3>Formulaire de Contact</h3>
                 <form>
                     <div class="form-group">
                         <label for="name">Nom</label>
@@ -59,14 +65,14 @@
                 </form>
             </div>
             <div class="col-md-6">
-                <h5>Nos Coordonnées</h5>
+                <h3>Nos Coordonnées</h3>
                 <ul class="list-unstyled">
                     <li>Email: contact@helpartisanat-ci.com</li>
                     <li>Téléphone: +225 00 00 00 00</li>
                     <li>Adresse: Rue de l'Artisanat, Abidjan, Côte d'Ivoire</li>
                 </ul>
                 <h5>Localisation</h5>
-                <div id="map" style="height: 300px;"></div>
+                <div id="map"></div>
             </div>
         </div>
     </div>
@@ -117,27 +123,20 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
-        function initMap() {
-            var center = { lat: 5.347, lng: -4.024 };
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 10,
-                center: center
+        document.addEventListener('DOMContentLoaded', function() {
+            var map = L.map('map').setView([5.347, -4.024], 10);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+            
+            var marker = L.marker([5.347, -4.024]).addTo(map);
+            
+            map.on('click', function(e) {
+                marker.setLatLng(e.latlng);
             });
-            var marker = new google.maps.Marker({
-                position: center,
-                map: map
-            });
-
-            map.addListener('click', function (event) {
-                placeMarker(event.latLng);
-            });
-
-            function placeMarker(location) {
-                marker.setPosition(location);
-            }
-        }
+        });
     </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
 </body>
 </html>
