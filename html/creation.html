@@ -91,7 +91,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Exemple de données d'articles (simulées pour cet exemple)
             const articles = [
                 { nom: "Poterie traditionnelle", img: "https://img.freepik.com/photos-gratuite/vase-terre-cuite-motif-indigene_23-2151585706.jpg?uid=R99967860&ga=GA1.1.266333496.1681286428&semt=ais_hybrid", prix: "70 000 FCFA" },
                 { nom: "Bijouterie artisanale", img: "https://img.freepik.com/photos-premium/vue-coupee-femme-afro-americaine-robe-turquoise-collier-isole-ai-generatif-jaune_873385-9894.jpg?uid=R99967860&ga=GA1.1.266333496.1681286428&semt=ais_hybrid", prix: "100 000 FCFA" },
@@ -99,12 +98,9 @@
                 { nom: "Poterie traditionnelle", img: "https://img.freepik.com/photos-gratuite/vase-terre-cuite-motif-indigene_23-2151585706.jpg?uid=R99967860&ga=GA1.1.266333496.1681286428&semt=ais_hybrid", prix: "70 000 FCFA" },
                 { nom: "Bijouterie artisanale", img: "https://img.freepik.com/photos-premium/vue-coupee-femme-afro-americaine-robe-turquoise-collier-isole-ai-generatif-jaune_873385-9894.jpg?uid=R99967860&ga=GA1.1.266333496.1681286428&semt=ais_hybrid", prix: "100 000 FCFA" },
                 { nom: "Sculpture sur bois", img: "https://img.freepik.com/photos-premium/sculpture-decorative-bois-fabriquee-main_951220-37871.jpg?uid=R99967860&ga=GA1.1.266333496.1681286428&semt=ais_hybrid", prix: "120 000 FCFA" }
-                // Ajoutez autant d'articles que nécessaire
             ];
 
             const articleList = document.getElementById('articleList');
-
-            // Générer dynamiquement les cartes d'articles
             articles.forEach(article => {
                 const card = document.createElement('div');
                 card.classList.add('col-md-4', 'mb-4');

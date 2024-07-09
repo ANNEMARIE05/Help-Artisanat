@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Help'Artisanat</title>
+    <link rel="icon" href="https://img.freepik.com/photos-gratuite/cruche-inachevee_1098-13687.jpg?uid=R99967860&ga=GA1.1.1477675911.1719911554&semt=ais_user" type="">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/inscription.css">
@@ -49,17 +50,17 @@
                     <div class="form-group">
                         <label>Sexe</label><br>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="gender" id="female" value="femme">
-                            <label class="form-check-label" for="female">Femme</label>
+                            <input class="form-check-input" type="radio" name="genre" id="femme" value="femme">
+                            <label class="form-check-label" for="femme">Femme</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="gender" id="male" value="homme">
-                            <label class="form-check-label" for="male">Homme</label>
+                            <input class="form-check-input" type="radio" name="genre" id="homme" value="homme">
+                            <label class="form-check-label" for="homme">Homme</label>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="city">Ville</label>
-                        <select class="form-control" id="city" required>
+                        <label for="ville">Ville</label>
+                        <select class="form-control" id="ville" required>
                             <option value="">Sélectionnez votre ville</option>
                             <option value="Abidjan">Abidjan</option>
                             <option value="Grand Bassam">Grand Bassam</option>
@@ -68,7 +69,7 @@
                             <option value="Daloa">Daloa</option>
                             <option value="Autre">Autre</option>
                         </select>
-                        <input type="text" class="form-control mt-2" id="other-city" placeholder="Entrez votre ville" style="display: none;">
+                        <input type="text" class="form-control mt-2" id="autre-ville" placeholder="Entrez votre ville" style="display: none;">
                     </div>
                     <div class="form-group">
                         <label for="commune">Commune / Village</label>
@@ -83,19 +84,19 @@
                             <option value="Koumassi">Koumassi</option>
                             <option value="Autre">Autre</option>
                         </select>
-                        <input type="text" class="form-control mt-2" id="other-commune" placeholder="Entrez votre commune ou village" style="display: none;">
+                        <input type="text" class="form-control mt-2" id="autre-commune" placeholder="Entrez votre commune ou village" style="display: none;">
                     </div>
                     <div class="form-group">
-                        <label for="neighborhood">Quartier</label>
-                        <input type="text" class="form-control" id="neighborhood" placeholder="Entrez votre quartier" required>
+                        <label for="quartier">Quartier</label>
+                        <input type="text" class="form-control" id="quartier" placeholder="Entrez votre quartier" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" class="form-control" id="email" placeholder="Entrez votre email" required>
                     </div>
                     <div class="form-group">
-                        <label for="phone">Numéro de téléphone</label>
-                        <input type="tel" class="form-control" id="phone" placeholder="Entrez votre numéro de téléphone" required>
+                        <label for="whatsapp">Numéro WhatsApp</label>
+                        <input type="tel" class="form-control" id="whatsapp" placeholder="Entrez votre numéro WhatsApp" required>
                     </div>
                     <div class="form-group">
                         <label for="company-name">Nom de l'entreprise</label>
@@ -129,22 +130,39 @@
                             <option value="Artisanat d’art et de décoration">Artisanat d’art et de décoration</option>
                             <option value="Autres">Autres</option>
                         </select>
-                        <input type="text" class="form-control mt-2" id="other-business-type" placeholder="Entrez votre type d’activité" style="display: none;">
+                        <input type="text" class="form-control mt-2" id="autre-business-type" placeholder="Entrez votre type d’activité" style="display: none;">
                     </div>
                     <div class="form-group">
                         <label for="location">Localisation</label>
                         <div id="map" style="height: 300px; width: 100%;"></div>
                     </div>
                     <div class="form-group">
-                        <label for="year">L'année d'existence de l'entreprise</label>
-                        <input type="number" class="form-control" id="year" placeholder="Entrez l'année d'existence de l'entreprise" required>
+                        <label for="année">L'année d'existence de l'entreprise</label>
+                        <input type="number" class="form-control" id="année" placeholder="Entrez l'année d'existence de l'entreprise" required>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block">Valider</button>
+                    <div class="form-group">
+                        <label for="certificate">Possession de certificat</label>
+                        <select class="form-control" id="certificate" required>
+                            <option value="">Sélectionnez une option</option>
+                            <option value="oui">Oui</option>
+                            <option value="non">Non</option>
+                        </select>
+                        <input type="file" class="form-control mt-2" id="certificate-file" style="display: none;" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="couverture">Zone de couverture</label>
+                        <input type="text" class="form-control" id="couverture" placeholder="Entrez la zone de couverture" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="motivation">Motivation à rejoindre Help'Artisanat</label>
+                        <textarea class="form-control" id="motivation" rows="3" placeholder="Décrivez votre motivation" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Soumettre</button>
                 </form>
             </div>
         </div>
     </section>
-    
+
     <footer class="pt-5 pb-4">
         <div class="container">
             <div class="row">
@@ -187,39 +205,15 @@
             </div>
         </div>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        document.getElementById('city').addEventListener('change', function () {
-            var otherCity = document.getElementById('other-city');
-            if (this.value === 'Autre') {
-                otherCity.style.display = 'block';
-            } else {
-                otherCity.style.display = 'none';
-            }
-        });
 
-        document.getElementById('commune').addEventListener('change', function () {
-            var otherCommune = document.getElementById('other-commune');
-            if (this.value === 'Autre') {
-                otherCommune.style.display = 'block';
-            } else {
-                otherCommune.style.display = 'none';
-            }
-        });
-
-        document.getElementById('business-type').addEventListener('change', function () {
-            var otherBusinessType = document.getElementById('other-business-type');
-            if (this.value === 'Autres') {
-                otherBusinessType.style.display = 'block';
-            } else {
-                otherBusinessType.style.display = 'none';
-            }
-        });
-
-        // Initialize and add the map
-        function initMap() {
+                // Initialize and add the map
+                function initMap() {
             // The location of the center
             var center = { lat: 5.347, lng: -4.024 };
             // The map, centered at the center
@@ -242,6 +236,39 @@
                 marker.setPosition(location);
             }
         }
+        $(document).ready(function () {
+            $('#ville').change(function () {
+                if ($(this).val() === 'Autre') {
+                    $('#autre-ville').show();
+                } else {
+                    $('#autre-ville').hide();
+                }
+            });
+
+            $('#commune').change(function () {
+                if ($(this).val() === 'Autre') {
+                    $('#autre-commune').show();
+                } else {
+                    $('#autre-commune').hide();
+                }
+            });
+
+            $('#business-type').change(function () {
+                if ($(this).val() === 'Autres') {
+                    $('#autre-business-type').show();
+                } else {
+                    $('#autre-business-type').hide();
+                }
+            });
+
+            $('#certificate').change(function () {
+                if ($(this).val() === 'oui') {
+                    $('#certificate-file').show();
+                } else {
+                    $('#certificate-file').hide();
+                }
+            });
+        });
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
 </body>

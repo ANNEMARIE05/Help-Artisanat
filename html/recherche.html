@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Help'Artisanat - Contact</title>
+    <title>Rechercher un artisan - Help'Artisanat</title>
+    <link rel="icon" href="https://img.freepik.com/photos-gratuite/cruche-inachevee_1098-13687.jpg?uid=R99967860&ga=GA1.1.1477675911.1719911554&semt=ais_user" type="">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../CSS/style.css">
-    <link rel="stylesheet" href="../CSS/contact.css">
 </head>
 <body>
     <header class="navbar navbar-expand-lg navbar-light bg-light">
@@ -17,19 +17,22 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="../">Accueil</a>
+                    <a class="nav-link" href="../index.html">Accueil</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="QSN.html">Qui sommes nous</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Creation.html">Création</a>
+                    <a class="nav-link" href="creation.html">Création</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Contact</a>
+                    <a class="nav-link" href="blog.html">Blog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="recherche.html">Rechercher un artisan</a>
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Rechercher un artisan</a>
                 </li>
             </ul>
             <a href="connexion.html"><button class="btn btn-primary mr-2" type="button">Se connecter</button></a>
@@ -37,41 +40,52 @@
         </div>
     </header>
 
+    <!-- Search Section -->
+    <section id="search" class="py-5">
+        <div class="container">
+            <h2>Rechercher un artisan</h2>
+            <form id="searchForm">
+                <div class="form-group">
+                    <label for="searchInput">Rechercher par métier</label>
+                    <input type="text" class="form-control" id="searchInput" placeholder="Entrez un métier artisanal">
+                </div>
+                <div class="form-group">
+                    <label for="citySelect">Sélectionnez la ville ou la commune</label>
+                    <select class="form-control" id="citySelect">
+                        <option value="">Sélectionnez la ville ou la commune</option>
+                        <option value="Abidjan">Abidjan</option>
+                        <option value="Abobo">Abobo</option>
+                        <option value="Adjamé">Adjamé</option>
+                        <option value="Anyama">Anyama</option>
+                        <option value="Attécoubé">Attécoubé</option>
+                        <option value="Bouaké">Bouaké</option>
+                        <option value="Cocody">Cocody</option>
+                        <option value="Daloa">Daloa</option>
+                        <option value="Bingerville">Bingerville</option>
+                        <option value="Koumassi">Koumassi</option>
+                        <option value="Grand Bassam">Grand Bassam</option>
+                        <option value="Yamoussoukro">Yamoussoukro</option>
+                        <option value="Autre">Autre</option>
+                    </select>
+                </div>
+                <div id="otherCityInput" class="form-group" style="display: none;">
+                    <label for="otherCity">Entrez votre ville ou commune</label>
+                    <input type="text" class="form-control" id="otherCity" placeholder="Entrez votre ville ou commune">
+                </div>
+                <button type="submit" class="btn btn-primary">Rechercher</button>
+            </form>
+        </div>
+    </section>
+
+
     <div class="container mt-4">
-        <h2 class="mb-4 text-center">Contactez-nous</h2>
-        <div class="row">
-            <div class="col-md-6">
-                <h5>Formulaire de Contact</h5>
-                <form>
-                    <div class="form-group">
-                        <label for="name">Nom</label>
-                        <input type="text" class="form-control" id="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea class="form-control" id="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Envoyer</button>
-                </form>
-            </div>
-            <div class="col-md-6">
-                <h5>Nos Coordonnées</h5>
-                <ul class="list-unstyled">
-                    <li>Email: contact@helpartisanat-ci.com</li>
-                    <li>Téléphone: +225 00 00 00 00</li>
-                    <li>Adresse: Rue de l'Artisanat, Abidjan, Côte d'Ivoire</li>
-                </ul>
-                <h5>Localisation</h5>
-                <div id="map" style="height: 300px;"></div>
-            </div>
+        <h2 class="mb-4">Les plus rechercher</h2>
+        <div id="articleList" class="row">
         </div>
     </div>
 
-    <footer class="pt-5 pb-4 bg-light">
+    <!-- Footer -->
+    <footer class="pt-5 pb-4">
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
@@ -83,9 +97,9 @@
                 <div class="col-md-3">
                     <h5>INFORMATIONS</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-dark">Bons de réduction</a></li>
-                        <li><a href="#" class="text-dark">Condition de vente et livraison</a></li>
-                        <li><a href="#" class="text-dark">Politique de confidentialité</a></li>
+                        <li><a href="#" class="text-white">Bons de réduction</a></li>
+                        <li><a href="#" class="text-white">Condition de vente et livraison</a></li>
+                        <li><a href="#" class="text-white">Politique de confidentialité</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3">
@@ -99,47 +113,66 @@
                 <div class="col-md-3">
                     <h5>Suivez-nous</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-dark">Facebook</a></li>
-                        <li><a href="#" class="text-dark">Twitter</a></li>
-                        <li><a href="#" class="text-dark">Instagram</a></li>
-                        <li><a href="#" class="text-dark">LinkedIn</a></li>
+                        <li><a href="#" class="text-white">Facebook</a></li>
+                        <li><a href="#" class="text-white">Twitter</a></li>
+                        <li><a href="#" class="text-white">Instagram</a></li>
+                        <li><a href="#" class="text-white">LinkedIn</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="row mt-3">
+            <div class="row mt-6">
                 <div class="col text-center">
                     <p>&copy; 2024 help’artisanat-ci. Tous droits réservés.</p>
                 </div>
             </div>
         </div>
     </footer>
-    
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        // Initialize and add the map
-        function initMap() {
-            var center = { lat: 5.347, lng: -4.024 };
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 10,
-                center: center
-            });
-            var marker = new google.maps.Marker({
-                position: center,
-                map: map
-            });
-
-            // Add a click event listener to place marker
-            map.addListener('click', function (event) {
-                placeMarker(event.latLng);
-            });
-
-            function placeMarker(location) {
-                marker.setPosition(location);
+        document.getElementById('citySelect').addEventListener('change', function() {
+            var selectedOption = this.value;
+            if (selectedOption === 'Autre') {
+                document.getElementById('otherCityInput').style.display = 'block';
+            } else {
+                document.getElementById('otherCityInput').style.display = 'none';
             }
-        }
+        });
+
+        document.getElementById('searchForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const articles = [
+                { nom: "Dalida Solange", img: "https://img.freepik.com/photos-premium/creatrice-mode-travaillant-son-atelier-soir_175356-9604.jpg?uid=R99967860&ga=GA1.1.266333496.1681286428&semt=ais_hybrid", profession: "Couturière", lieu: "Marcory"},
+                { nom: "Diomande Soraya", img: "https://img.freepik.com/photos-gratuite/femme-noire-tete-petite-entreprise_52683-100660.jpg?uid=R99967860&ga=GA1.1.266333496.1681286428&semt=ais_hybrid", profession: "Chef cuisinier", lieu: "Koumassi"},
+                { nom: "Dimitri hyppolite", img: "https://img.freepik.com/photos-gratuite/confiant-tenant-plongeur-jeune-homme-nettoyant-afro-americain-uniforme-gants-isoles-fond-vert_141793-135280.jpg?uid=R99967860&ga=GA1.1.266333496.1681286428&semt=ais_hybrid", profession: "Plombier", lieu: "Cocody"},
+            ];
+
+            const articleList = document.getElementById('articleList');
+
+            articles.forEach(article => {
+                const card = document.createElement('div');
+                card.classList.add('col-md-4', 'mb-4');
+
+                card.innerHTML = `
+                    <div class="card">
+                        <img src= ${article.img} class="card-img-top" style="height:250px;" alt="Image de l'article">
+                        <div class="card-body">
+                            <h4 class="card-title">${article.nom}</h4>
+                            <h5 class="card-text">${article.profession}</h5>
+                            <h5 class="card-text">${article.lieu}</h5>
+                            <a href="#" class="btn btn-primary btn-contact">Contactez-moi</a>
+                        </div>
+                    </div>
+                `;
+
+                articleList.appendChild(card);
+            });
+        });
+
     </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
 </body>
 </html>
