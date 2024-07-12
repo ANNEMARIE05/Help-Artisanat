@@ -1,11 +1,237 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tableau de Bord Artisan</title>
+    <link rel="icon" href="https://img.freepik.com/photos-gratuite/cruche-inachevee_1098-13687.jpg?uid=R99967860&ga=GA1.1.1477675911.1719911554&semt=ais_user" type="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
 </head>
 <body>
-    
+    <header class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="../index.html" style="color: #d63384;">Help'Artisanat</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="QSN.html">Qui sommes nous</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Creation.html">Création</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="recherche.html">Rechercher un artisan</a>
+                </li>
+            </ul>
+            <span class="navbar-text mr-2">Diomande Dalida</span>
+        </div>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active-link" href="#" id="dashboard-link"><i class="fas fa-tachometer-alt mr-2"></i> Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="add-article-link"><i class="fas fa-plus-circle mr-2"></i> Ajouter un Article</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="publicity-link"><i class="fas fa-bullhorn mr-2"></i> Publicité</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="profile-link"><i class="fas fa-user mr-2"></i> Profil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="history-link"><i class="fas fa-history mr-2"></i> Historique</a>
+                        </li>
+                    </ul>
+                    <div class="mt-4">
+                        <span id="logout-button"><i class="fas fa-sign-out-alt mr-2"></i> Déconnexion</span>
+                    </div>
+                </div>
+            </nav>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 content">
+                <div id="dashboard">
+                    <h1 style="color: #d63384;">Bienvenue sur votre Tableau de Bord</h1>
+                    <p>Utilisez le menu à gauche pour naviguer entre les différentes sections de votre tableau de bord.</p>
+                </div>
+
+                <div id="add-article" style="display: none;">
+                    <h1 style="color: #d63384;">Ajouter un Nouvel Article</h1>
+                    <form>
+                        <div class="form-group">
+                            <label for="articleName">Nom de l'Article</label>
+                            <input type="text" class="form-control" id="articleName" placeholder="Entrez le nom de l'article">
+                        </div>
+                        <div class="form-group">
+                            <label for="articlePrice">Prix de l'Article</label>
+                            <input type="text" class="form-control" id="articlePrice" placeholder="Entrez le prix de l'article">
+                        </div>
+                        <div class="form-group">
+                            <label for="articleImage">Image de l'Article</label>
+                            <input type="file" class="form-control-file" id="articleImage">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Ajouter l'Article</button>
+                    </form>
+                </div>
+
+                <div id="publicity" style="display: none;">
+                    <h1 style="color: #d63384;">Faire de la Publicité</h1>
+                    <p>Page pour faire des publicités pour les produits et services de l'artisan.</p>
+                </div>
+
+                <div id="profile" style="display: none;">
+                    <h1 style="color: #d63384;">Profil de l'Artisan</h1>
+                    <form>
+                        <div class="form-group">
+                            <label for="artisanName">Nom</label>
+                            <input type="text" class="form-control" id="artisanName" value="Diomande Dalida" placeholder="Entrez votre nom">
+                        </div>
+                        <div class="form-group">
+                            <label for="artisanEmail">Email</label>
+                            <input type="email" class="form-control" id="artisanEmail" value="diomande.dalida@example.com" placeholder="Entrez votre email">
+                        </div>
+                        <div class="form-group">
+                            <label for="artisanPhone">Téléphone</label>
+                            <input type="text" class="form-control" id="artisanPhone" value="0123456789" placeholder="Entrez votre numéro de téléphone">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Mettre à jour le profil</button>
+                    </form>
+                </div>
+
+                <div id="history" style="display: none;">
+                    <h1 style="color: #d63384;">Historique des Articles</h1>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nom de l'Article</th>
+                                <th scope="col">Prix</th>
+                                <th scope="col">Image</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Les articles ajoutés apparaîtront ici -->
+                            <tr>
+                                <td>Article 1</td>
+                                <td>20 000 FCFA</td>
+                                <td><img src="https://img.freepik.com/photos-premium/tangerine-elegance-celebrant-heritage-africain-dans-palette-mariage_802234-7462.jpg?uid=R99967860&ga=GA1.2.1477675911.1719911554&semt=ais_user" alt="Image de l'article" style="max-width: 100px;"></td>
+                                <td>
+                                    <button class="btn btn-sm btn-warning">Modifier</button>
+                                    <button class="btn btn-sm btn-danger">Supprimer</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Article 2</td>
+                                <td>22 000 FCFA</td>
+                                <td><img src="https://img.freepik.com/photos-gratuite/portrait-belle-femme-posant-exterieur_23-2150150787.jpg?uid=R99967860&ga=GA1.2.1477675911.1719911554&semt=ais_user" alt="Image de l'article" style="max-width: 100px;"></td>
+                                <td>
+                                    <button class="btn btn-sm btn-warning">Modifier</button>
+                                    <button class="btn btn-sm btn-danger">Supprimer</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <footer class="pt-5 pb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>Help'Artisanat</h5>
+                    <p>
+                        Help'Artisanat est une plateforme dédiée aux artisans. Nous croyons en l'importance de préserver les savoir-faire traditionnels et de soutenir les artisans dans leur démarche créative et entrepreneuriale.
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <h5>INFORMATIONS</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Bons de réduction</a></li>
+                        <li><a href="#" class="text-white">Condition de vente et livraison</a></li>
+                        <li><a href="#" class="text-white">Politique de confidentialité</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contactez-nous</h5>
+                    <ul class="list-unstyled">
+                        <li>Email: contact@helpartisanat-ci.com</li>
+                        <li>Téléphone: +225 00 00 00 00</li>
+                        <li>Adresse: Rue de l'Artisanat, Abidjan, Côte d'Ivoire</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Suivez-nous</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Facebook</a></li>
+                        <li><a href="#" class="text-white">Twitter</a></li>
+                        <li><a href="#" class="text-white">Instagram</a></li>
+                        <li><a href="#" class="text-white">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-6">
+                <div class="col text-center">
+                    <p>&copy; 2024 help’artisanat-ci. Tous droits réservés.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('dashboard-link').addEventListener('click', function() {
+            showSection('dashboard');
+        });
+        document.getElementById('add-article-link').addEventListener('click', function() {
+            showSection('add-article');
+        });
+        document.getElementById('publicity-link').addEventListener('click', function() {
+            showSection('publicity');
+        });
+        document.getElementById('profile-link').addEventListener('click', function() {
+            showSection('profile');
+        });
+        document.getElementById('history-link').addEventListener('click', function() {
+            showSection('history');
+        });
+        document.getElementById('logout-button').addEventListener('click', function() {
+            // Log out logic here
+            alert('Déconnexion réussie');
+        });
+
+        function showSection(sectionId) {
+            const sections = ['dashboard', 'add-article', 'publicity', 'profile', 'history'];
+            sections.forEach(function(section) {
+                document.getElementById(section).style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
+            document.body.style.background = (sectionId === 'dashboard') ? '#f8f9fa' : '#ffffff';
+        }
+    </script>
 </body>
 </html>
