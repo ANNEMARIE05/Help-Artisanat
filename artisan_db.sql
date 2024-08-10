@@ -18,3 +18,14 @@ CREATE TABLE artisans (
     whatsapp VARCHAR(15),  
     mot_de_passe VARCHAR(255) NOT NULL  
 );
+
+CREATE DATABASE helpartisanat;
+
+USE helpartisanat;
+
+CREATE TABLE articles (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(255) NOT NULL,
+    prix DECIMAL(10, 2) NOT NULL,
+    image VARCHAR(255) NOT NULL
+);

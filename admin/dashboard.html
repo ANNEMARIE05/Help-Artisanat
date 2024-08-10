@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Administrateur</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8f9fa;
+        }
+        #sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #d63384; /* Sidebar pink */
+            color: #fff;
+            padding: 20px;
+        }
+        #sidebar .nav-link {
+            color: #fff;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        #sidebar .nav-link.active {
+            background-color: #b32e77; /* Darker pink for active link */
+            color: #fff;
+        }
+        #sidebar .nav-link.active i {
+            color: #fff; /* White icon for active link */
+        }
+        #sidebar .nav-link:hover {
+            background-color: #b32e77;
+            border-radius: 5px;
+        }
+        #sidebar .nav-link i {
+            margin-right: 10px;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            background-color: #fff; /* Content area white */
+        }
+        .dashboard-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .card {
+            flex: 1;
+            min-width: 200px;
+            max-width: 300px;
+            text-align: center;
+            transition: transform 0.2s;
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 0.375rem;
+            box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,.075);
+            background-color: #f8d7da; /* Light pink background */
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card-title {
+            color: #d63384; /* Pink color for card titles */
+            margin-bottom: 1.5rem;
+        }
+        .welcome {
+            color: #d63384; /* Color same as sidebar */
+            margin-bottom: 20px;
+        }
+        .card-icon {
+            font-size: 2rem;
+            color: #d63384;
+            margin-bottom: 1rem;
+        }
+        .table th, .table td {
+            vertical-align: middle;
+        }
+        #sidebar .monh4{
+            text-decoration: none;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="sidebar">
+        <a href="/index.html" class="monh4"><h4>Help'Artisanat</h4></a>
+        <nav class="nav flex-column mt-4">
+            <a href="#" class="nav-link" id="admin-dashboard-link" onclick="showPage('admin-dashboard')">
+                <i class="fas fa-tachometer-alt"></i> Tableau de Bord
+            </a>
+            <a href="#" class="nav-link" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i> Déconnexion
+            </a>
+        </nav>
+    </div>
+
+    <div class="content">
+        <div id="admin-dashboard" class="d-none">
+            <h2 class="welcome text-center">Bienvenue cher administrateur!</h2>
+            <h3>Liste des Artisans</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Téléphone</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Les artisans apparaîtront ici -->
+                    <tr>
+                        <td>Diomande Dalida</td>
+                        <td>diomande.dalida@example.com</td>
+                        <td>0123456789</td>
+                        <td>
+                            <button class="btn btn-sm btn-warning" onclick="blockArtisan()">Bloquer</button>
+                            <button class="btn btn-sm btn-danger" onclick="deleteArtisan()">Supprimer</button>
+                        </td>
+                    </tr>
+                    <!-- Ajouter plus de lignes pour les artisans -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            const pages = ['admin-dashboard'];
+            pages.forEach(page => {
+                document.getElementById(page).classList.add('d-none');
+            });
+            document.getElementById(pageId).classList.remove('d-none');
+            
+            const links = ['admin-dashboard-link'];
+            links.forEach(linkId => {
+                const link = document.getElementById(linkId);
+                if (pageId === linkId.split('-')[0]) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+
+        function logout() {
+            alert('Déconnexion réussie');
+        }
+
+        function blockArtisan() {
+            alert('Artisan bloqué');
+        }
+
+        function deleteArtisan() {
+            alert('Artisan supprimé');
+        }
+
+        // Show the admin dashboard by default
+        showPage('admin-dashboard');
+    </script>
+</body>
+</html>

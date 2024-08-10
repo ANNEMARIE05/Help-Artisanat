@@ -12,11 +12,18 @@
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
+        .navbar-brand img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+        }
     </style>
 </head>
 <body>
     <header class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="../index.html" style="color: #d63384;">Help'Artisanat</a>
+        <a class="navbar-brand" href="#">
+            <img src="../image/helpArtisanat.jpg" alt="Logo Help'Artisanat">
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -29,10 +36,7 @@
                     <a class="nav-link" href="QSN.html">Qui sommes nous</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="creation.html">Création</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="blog.html">Blog</a>
+                    <a class="nav-link" href="creation.html">Création des artisans</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="contact.html">Contact</a>
@@ -151,9 +155,9 @@
 
         document.addEventListener('DOMContentLoaded', function() {
             const articles = [
-                { nom: "Dalida Solange", img: "https://img.freepik.com/photos-premium/creatrice-mode-travaillant-son-atelier-soir_175356-9604.jpg?uid=R99967860&ga=GA1.1.266333496.1681286428&semt=ais_hybrid", profession: "Couturière", lieu: "Marcory"},
-                { nom: "Diomande Soraya", img: "https://img.freepik.com/photos-gratuite/femme-noire-tete-petite-entreprise_52683-100660.jpg?uid=R99967860&ga=GA1.1.266333496.1681286428&semt=ais_hybrid", profession: "Chef cuisinier", lieu: "Koumassi"},
-                { nom: "Dimitri hyppolite", img: "https://img.freepik.com/photos-gratuite/confiant-tenant-plongeur-jeune-homme-nettoyant-afro-americain-uniforme-gants-isoles-fond-vert_141793-135280.jpg?uid=R99967860&ga=GA1.1.266333496.1681286428&semt=ais_hybrid", profession: "Plombier", lieu: "Cocody"},
+                { nom: "Dalida Solange", img: "https://img.freepik.com/photos-premium/creatrice-mode-travaillant-son-atelier-soir_175356-9604.jpg?uid=R99967860&ga=GA1.1.266333496.1681286428&semt=ais_hybrid", profession: "Couturière", lieu: "Marcory", contact: "0102030405"},
+                { nom: "Diomande Soraya", img: "https://img.freepik.com/photos-gratuite/femme-noire-tete-petite-entreprise_52683-100660.jpg?uid=R99967860&ga=GA1.1.266333496.1681286428&semt=ais_hybrid", profession: "Chef cuisinier", lieu: "Koumassi", contact: "0102030405"},
+                { nom: "Dimitri hyppolite", img: "https://img.freepik.com/photos-gratuite/confiant-tenant-plongeur-jeune-homme-nettoyant-afro-americain-uniforme-gants-isoles-fond-vert_141793-135280.jpg?uid=R99967860&ga=GA1.1.266333496.1681286428&semt=ais_hybrid", profession: "Plombier", lieu: "Cocody", contact: "0102030405"},
             ];
 
             const articleList = document.getElementById('articleList');
@@ -169,6 +173,7 @@
                             <h4 class="card-title">${article.nom}</h4>
                             <h5 class="card-text">${article.profession}</h5>
                             <h5 class="card-text">${article.lieu}</h5>
+                            <h5 class="card-text">${article.contact}</h5>
                             <a href="#" class="btn btn-primary btn-contact">Contactez-moi</a>
                         </div>
                     </div>

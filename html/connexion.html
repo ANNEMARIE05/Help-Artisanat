@@ -13,11 +13,18 @@
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
+        .navbar-brand img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+        }
     </style>
 </head>
 <body>
     <header class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="../index.html" style="color: #d63384;">Help'Artisanat</a>
+        <a class="navbar-brand" href="#">
+            <img src="../image/helpArtisanat.jpg" alt="Logo Help'Artisanat">
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -30,7 +37,7 @@
                     <a class="nav-link" href="QSN.html">Qui sommes nous</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Creation.html">Création</a>
+                    <a class="nav-link" href="Creation.html">Création des artisans</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="Contact.html">Contact</a>
@@ -59,6 +66,7 @@
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">Connexion</button>
                     <a href="../artisan/indexArtisan.html">connecter</a>
+                    <a href="../admin/dashboard.html">Admin</a>
                 </form>
                 <p class="text-center mt-3 mb-0"><a href="pack.html">Pas de compte ? S'inscrire</a></p>
             </div>

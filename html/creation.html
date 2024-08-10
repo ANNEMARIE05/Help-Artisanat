@@ -12,11 +12,18 @@
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
+        .navbar-brand img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+        }
     </style>
 </head>
 <body>
     <header class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="../index.html" style="color: #d63384;">Help'Artisanat</a>
+        <a class="navbar-brand" href="#">
+            <img src="../image/helpArtisanat.jpg" alt="Logo Help'Artisanat">
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -29,7 +36,7 @@
                     <a class="nav-link" href="QSN.html">Qui sommes nous</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Création</a>
+                    <a class="nav-link active" href="#">Création des artisans</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="contact.html">Contact</a>
@@ -98,12 +105,12 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const articles = [
-                { nom: "Poterie traditionnelle", img: "https://img.freepik.com/photos-gratuite/vase-terre-cuite-motif-indigene_23-2151585706.jpg?uid=R99967860&ga=GA1.1.266333496.1681286428&semt=ais_hybrid", prix: "70 000 FCFA" },
-                { nom: "Bijouterie artisanale", img: "https://img.freepik.com/photos-premium/vue-coupee-femme-afro-americaine-robe-turquoise-collier-isole-ai-generatif-jaune_873385-9894.jpg?uid=R99967860&ga=GA1.1.266333496.1681286428&semt=ais_hybrid", prix: "100 000 FCFA" },
-                { nom: "Sculpture sur bois", img: "https://img.freepik.com/photos-premium/sculpture-decorative-bois-fabriquee-main_951220-37871.jpg?uid=R99967860&ga=GA1.1.266333496.1681286428&semt=ais_hybrid", prix: "120 000 FCFA" },
-                { nom: "Poterie traditionnelle", img: "https://img.freepik.com/photos-gratuite/vase-terre-cuite-motif-indigene_23-2151585706.jpg?uid=R99967860&ga=GA1.1.266333496.1681286428&semt=ais_hybrid", prix: "70 000 FCFA" },
-                { nom: "Bijouterie artisanale", img: "https://img.freepik.com/photos-premium/vue-coupee-femme-afro-americaine-robe-turquoise-collier-isole-ai-generatif-jaune_873385-9894.jpg?uid=R99967860&ga=GA1.1.266333496.1681286428&semt=ais_hybrid", prix: "100 000 FCFA" },
-                { nom: "Sculpture sur bois", img: "https://img.freepik.com/photos-premium/sculpture-decorative-bois-fabriquee-main_951220-37871.jpg?uid=R99967860&ga=GA1.1.266333496.1681286428&semt=ais_hybrid", prix: "120 000 FCFA" }
+                { nom: "Poterie traditionnelle", img: "https://img.freepik.com/photos-gratuite/vase-terre-cuite-motif-indigene_23-2151585706.jpg?uid=R99967860&ga=GA1.1.266333496.1681286428&semt=ais_hybrid", prix: "70 000 FCFA", contact: "0102030405" },
+                { nom: "Bijouterie artisanale", img: "https://img.freepik.com/photos-premium/vue-coupee-femme-afro-americaine-robe-turquoise-collier-isole-ai-generatif-jaune_873385-9894.jpg?uid=R99967860&ga=GA1.1.266333496.1681286428&semt=ais_hybrid", prix: "100 000 FCFA", contact: "0705060402" },
+                { nom: "Sculpture sur bois", img: "https://img.freepik.com/photos-premium/sculpture-decorative-bois-fabriquee-main_951220-37871.jpg?uid=R99967860&ga=GA1.1.266333496.1681286428&semt=ais_hybrid", prix: "120 000 FCFA", contact: "0405030708" },
+                { nom: "Poterie traditionnelle", img: "https://img.freepik.com/photos-gratuite/vase-terre-cuite-motif-indigene_23-2151585706.jpg?uid=R99967860&ga=GA1.1.266333496.1681286428&semt=ais_hybrid", prix: "70 000 FCFA", contact: "0405030708" },
+                { nom: "Bijouterie artisanale", img: "https://img.freepik.com/photos-premium/vue-coupee-femme-afro-americaine-robe-turquoise-collier-isole-ai-generatif-jaune_873385-9894.jpg?uid=R99967860&ga=GA1.1.266333496.1681286428&semt=ais_hybrid", prix: "100 000 FCFA", contact: "0705060402" },
+                { nom: "Sculpture sur bois", img: "https://img.freepik.com/photos-premium/sculpture-decorative-bois-fabriquee-main_951220-37871.jpg?uid=R99967860&ga=GA1.1.266333496.1681286428&semt=ais_hybrid", prix: "120 000 FCFA", contact: "0405030708" }
             ];
 
             const articleList = document.getElementById('articleList');
@@ -117,6 +124,7 @@
                         <div class="card-body">
                             <h5 class="card-title">${article.nom}</h5>
                             <p class="card-text">Prix: ${article.prix}</p>
+                            <p class="card-text">Contact: ${article.contact}</p>
                             <a href="#" class="btn btn-primary btn-contact">Contactez-moi</a>
                         </div>
                     </div>
