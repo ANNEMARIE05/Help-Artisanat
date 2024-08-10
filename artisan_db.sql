@@ -21,6 +21,12 @@ CREATE TABLE artisans (
     mot_de_passe VARCHAR(255) NOT NULL
 );
 
--- Insertion de l'administrateur par défaut
-INSERT INTO artisans (nom, prenom, sexe, ville, commune, quartier, email, numero, entreprise, secteur, specialites, whatsapp, mot_de_passe)
-VALUES ('Administrateur', 'Super', 'Homme', '', '', '', 'admin@helpartisanat.com', '0172317983', '', '', '', '', 'azerty');
+
+CREATE TABLE articles (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(255) NOT NULL,
+    prix VARCHAR(50) NOT NULL,
+    contact VARCHAR(50) NOT NULL,
+    image VARCHAR(255) NOT NULL,
+    date_ajout DATETIME DEFAULT CURRENT_TIMESTAMP
+);

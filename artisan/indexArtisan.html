@@ -186,21 +186,23 @@
         <div id="profil" class="d-none">
             <h2>Mon profil</h2>
             <p>Voir et modifier vos informations.</p>
-            <form>
+            <form action="update_profile.php" method="post">
+                <input type="hidden" name="id" value="1"> <!-- Replace 1 with dynamic artisan ID -->
                 <div class="form-group">
-                    <label for="artisanName">Nom</label>
-                    <input type="text" class="form-control" id="artisanName" value="Diomande Dalida" placeholder="Entrez votre nom">
+                    <label for="nom">Nom</label>
+                    <input type="text" class="form-control" id="nom" name="nom" value="Diomande Dalida">
                 </div>
                 <div class="form-group">
-                    <label for="artisanEmail">Email</label>
-                    <input type="email" class="form-control" id="artisanEmail" value="diomande.dalida@example.com" placeholder="Entrez votre email">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" value="diomande.dalida@example.com">
                 </div>
                 <div class="form-group">
-                    <label for="artisanPhone">Téléphone</label>
-                    <input type="text" class="form-control" id="artisanPhone" value="0123456789" placeholder="Entrez votre numéro de téléphone">
+                    <label for="telephone">Téléphone</label>
+                    <input type="text" class="form-control" id="telephone" name="telephone" value="0123456789">
                 </div>
                 <button type="submit" class="btn btn-primary mt-3">Mettre à jour le profil</button>
             </form>
+            
         </div>
 
         <div id="historique" class="d-none">
@@ -220,19 +222,18 @@
                     <tr>
                         <td>Article 1</td>
                         <td>20 000 FCFA</td>
-                        <td><img src="https://img.freepik.com/photos-premium/tangerine-elegance-celebrant-heritage-africain-dans-palette-mariage_802234-7462.jpg?uid=R99967860&ga=GA1.2.1477675911.1719911554&semt=ais_user" alt="Image de l'article" style="max-width: 100px;"></td>
+                        <td><img src="https://example.com/image.jpg" alt="Image de l'article" style="max-width: 100px;"></td>
                         <td>
-                            <button class="btn btn-sm btn-warning">Modifier</button>
-                            <button class="btn btn-sm btn-danger">Supprimer</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Article 2</td>
-                        <td>22 000 FCFA</td>
-                        <td><img src="https://img.freepik.com/photos-gratuite/portrait-belle-femme-posant-exterieur_23-2150150787.jpg?uid=R99967860&ga=GA1.2.1477675911.1719911554&semt=ais_user" alt="Image de l'article" style="max-width: 100px;"></td>
-                        <td>
-                            <button class="btn btn-sm btn-warning">Modifier</button>
-                            <button class="btn btn-sm btn-danger">Supprimer</button>
+                            <form action="update_article.php" method="post">
+                                <!-- <input type="hidden" name="id" value="1">
+                                <input type="text" name="nom" value="Article 1">
+                                <input type="text" name="prix" value="20000"> -->
+                                <button type="submit" class="btn btn-sm btn-warning">Modifier</button>
+                            </form>
+                            <form action="delete_article.php" method="post">
+                                <!-- <input type="hidden" name="id" value="1">  -->
+                                <button type="submit" class="btn btn-sm btn-danger">Supprimer</button>
+                            </form>
                         </td>
                     </tr>
                 </tbody>

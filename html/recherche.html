@@ -53,14 +53,14 @@
     <section id="search" class="py-5">
         <div class="container">
             <h2>Rechercher un artisan</h2>
-            <form id="searchForm">
+            <form id="searchForm" method="POST" action="recherche_artisan.php">
                 <div class="form-group">
                     <label for="searchInput">Rechercher par métier</label>
-                    <input type="text" class="form-control" id="searchInput" placeholder="Entrez un métier artisanal">
+                    <input type="text" class="form-control" id="searchInput" name="search" placeholder="Entrez un métier artisanal">
                 </div>
                 <div class="form-group">
                     <label for="citySelect">Sélectionnez la ville ou la commune</label>
-                    <select class="form-control" id="citySelect">
+                    <select class="form-control" id="citySelect" name="city">
                         <option value="">Sélectionnez la ville ou la commune</option>
                         <option value="Abidjan">Abidjan</option>
                         <option value="Abobo">Abobo</option>
@@ -77,12 +77,9 @@
                         <option value="Autre">Autre</option>
                     </select>
                 </div>
-                <div id="otherCityInput" class="form-group" style="display: none;">
-                    <label for="otherCity">Entrez votre ville ou commune</label>
-                    <input type="text" class="form-control" id="otherCity" placeholder="Entrez votre ville ou commune">
-                </div>
                 <button type="submit" class="btn btn-primary">Rechercher</button>
             </form>
+            
         </div>
     </section>
 
