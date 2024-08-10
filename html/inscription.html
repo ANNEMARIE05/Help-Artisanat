@@ -153,6 +153,20 @@
                     <div class="form-group">
                         <label for="location">Localisation</label>
                         <div id="map" style="height: 400px;"></div>
+                      <!-- Champs cachés pour latitude et longitude -->
+                        <input type="hidden" id="latitude" name="latitude">
+                        <input type="hidden" id="longitude" name="longitude">
+
+                        <!-- Ajoutez ces champs visibles pour afficher les coordonnées -->
+                        <div class="form-group mt-3">
+                            <label for="latitude-input">Latitude</label>
+                            <input type="text" class="form-control" id="latitude-input" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="longitude-input">Longitude</label>
+                            <input type="text" class="form-control" id="longitude-input" readonly>
+                        </div>
+
                     </div>
                     <button type="submit" class="btn btn-primary">S'inscrire</button>
                 </form>
@@ -209,45 +223,54 @@
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
         $(document).ready(function () {
-            $('#ville').change(function () {
-                if ($(this).val() === 'Autre') {
-                    $('#autre-ville').show().prop('required', true);
-                } else {
-                    $('#autre-ville').hide().prop('required', false);
-                }
-            });
+        $('#ville').change(function () {
+            if ($(this).val() === 'Autre') {
+                $('#autre-ville').show().prop('required', true);
+            } else {
+                $('#autre-ville').hide().prop('required', false);
+            }
+        });
 
-            $('#commune').change(function () {
-                if ($(this).val() === 'Autre') {
-                    $('#autre-commune').show().prop('required', true);
-                } else {
-                    $('#autre-commune').hide().prop('required', false);
-                }
-            });
+        $('#commune').change(function () {
+            if ($(this).val() === 'Autre') {
+                $('#autre-commune').show().prop('required', true);
+            } else {
+                $('#autre-commune').hide().prop('required', false);
+            }
+        });
 
-            $('#business-type').change(function () {
-                if ($(this).val() === 'Autres') {
-                    $('#autre-business-type').show().prop('required', true);
-                } else {
-                    $('#autre-business-type').hide().prop('required', false);
-                }
-            });
+        $('#business-type').change(function () {
+            if ($(this).val() === 'Autres') {
+                $('#autre-business-type').show().prop('required', true);
+            } else {
+                $('#autre-business-type').hide().prop('required', false);
+            }
+        });
 
-            var map = L.map('map').setView([5.345317, -4.024429], 13);
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(map);
+        var map = L.map('map').setView([5.345317, -4.024429], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
 
-            var marker = L.marker([5.345317, -4.024429]).addTo(map)
-                .bindPopup('Position approximative.')
-                .openPopup();
+        var marker = L.marker([5.345317, -4.024429]).addTo(map)
+            .bindPopup('Position approximative.')
+            .openPopup();
 
             map.on('click', function(e) {
                 marker.setLatLng(e.latlng)
                     .bindPopup('Vous avez cliqué ici : ' + e.latlng.toString())
                     .openPopup();
+
+                // Remplir les champs cachés et visibles avec les coordonnées
+                $('#latitude').val(e.latlng.lat);
+                $('#longitude').val(e.latlng.lng);
+
+                $('#latitude-input').val(e.latlng.lat);
+                $('#longitude-input').val(e.latlng.lng);
             });
         });
+
     </script>
+
 </body>
 </html>
