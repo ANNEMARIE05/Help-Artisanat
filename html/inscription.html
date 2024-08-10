@@ -41,7 +41,7 @@
                 </li>
             </ul>
             <a href="connexion.html"><button class="btn btn-primary mr-2" type="button">Se connecter</button></a>
-            <a href="pack.html"><button class="btn btn-outline-primary" type="button">S'identifier</button></a>
+            <a href="inscription.html"><button class="btn btn-outline-primary" type="button">S'identifier</button></a>
         </div>
     </header>
 
@@ -49,7 +49,7 @@
         <div class="container">
             <div class="form-container">
                 <h2>Création d'un artisan</h2>
-                <form>
+                <form action="inscription.php" method="POST">
                     <div class="form-group">
                         <label for="name">Nom et Prénom</label>
                         <input type="text" class="form-control" id="name" placeholder="Entrez votre nom et prénom" required>
@@ -99,7 +99,7 @@
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Entrez votre email" required>
+                        <input type="email" class="form-control" id="email" placeholder="Entrez votre email">
                     </div>
                     <div class="form-group">
                         <label for="numéro">Numéro </label>
