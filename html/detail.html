@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails de l'Artisan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .artisan-details {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .artisan-details img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+        .card img {
+            height: 150px;
+            object-fit: cover;
+        }
+        .contact-button {
+            background-color: #d63384;
+            color: white;
+            border: none;
+        }
+        .contact-button:hover {
+            background-color: #c2185b;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="../image/helpArtisanat.jpg" alt="Logo Help'Artisanat" style="border-radius: 50%; width: 50px; height: 50px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="QSN.html">Qui sommes nous</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="creation.html">Création des artisans</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="recherche.html">Rechercher un artisan</a>
+                </li>
+            </ul>
+            <a href="connexion.html"><button class="btn btn-primary mr-2" type="button">Se connecter</button></a>
+            <a href="inscription.html"><button class="btn btn-outline-primary" type="button">S'identifier</button></a>
+        </div>
+    </header>
+    <div class="container mt-5">
+        <div class="artisan-details">
+            <!-- Insérer l'image via JavaScript -->
+            <img id="artisan-image" src="" alt="Artisan Image">
+            <h2 id="artisan-name">Nom de l'Artisan</h2>
+            <p id="artisan-metier">Métier: Potier</p>
+            <p id="artisan-contact">Contact: +225 00 00 00 00</p>
+        </div>
+        
+        <h2>Les différents articles réalisés</h2>
+        <div class="row" id="articles-list">
+            <!-- Les articles seront insérés dynamiquement ici par JavaScript -->
+        </div>
+    </div>
+    <footer class="pt-5 pb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>Help'Artisanat</h5>
+                    <p>
+                        Help'Artisanat est une plateforme dédiée aux artisans. Nous croyons en l'importance de préserver les savoir-faire traditionnels et de soutenir les artisans dans leur démarche créative et entrepreneuriale.
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <h5>INFORMATIONS</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Bons de réduction</a></li>
+                        <li><a href="#" class="text-white">Condition de vente et livraison</a></li>
+                        <li><a href="#" class="text-white">Politique de confidentialité</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contactez-nous</h5>
+                    <ul class="list-unstyled">
+                        <li>Email: contact@helpartisanat-ci.com</li>
+                        <li>Téléphone: +225 00 00 00 00</li>
+                        <li>Adresse: Rue de l'Artisanat, Abidjan, Côte d'Ivoire</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Suivez-nous</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Facebook</a></li>
+                        <li><a href="#" class="text-white">Twitter</a></li>
+                        <li><a href="#" class="text-white">Instagram</a></li>
+                        <li><a href="#" class="text-white">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-6">
+                <div class="col text-center">
+                    <p>&copy; 2024 help’artisanat-ci. Tous droits réservés.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Sample data for the artisan and their articles
+        const artisan = {
+            name: "Jean Dupont",
+            contact: "+225 00 00 00 00",
+            metier: "Potier",
+            image: "https://img.freepik.com/photos-gratuite/portrait-homme-travaillant-du-gres-poterie_23-2151686564.jpg?uid=R99967860&ga=GA1.1.1477675911.1719911554&semt=ais_hybrid",
+            articles: [
+                {
+                    name: "Vase en terre cuite",
+                    price: "15,000 CFA",
+                    image: "https://img.freepik.com/photos-gratuite/design-vase-moderne-elegant_23-2150529793.jpg?uid=R99967860&ga=GA1.1.1477675911.1719911554&semt=ais_hybrid",
+                    contact: "+225 00 00 00 00"
+                },
+                {
+                    name: "Vase en terre cuite",
+                    price: "30,000 CFA",
+                    image: "https://img.freepik.com/photos-gratuite/design-vase-moderne-elegant_23-2150529770.jpg?uid=R99967860&ga=GA1.1.1477675911.1719911554&semt=ais_hybrid",
+                    contact: "+225 00 00 00 00"
+                },
+                {
+                    name: "Vase en terre cuite",
+                    price: "25,000 CFA",
+                    image: "https://img.freepik.com/photos-gratuite/vase-terre-cuite-motif-indigene_23-2151585721.jpg?uid=R99967860&ga=GA1.1.1477675911.1719911554&semt=ais_hybrid",
+                    contact: "+225 00 00 00 00"
+                }
+            ]
+        };
+
+        // Insert artisan details
+        document.getElementById("artisan-name").textContent = artisan.name;
+        document.getElementById("artisan-metier").textContent = "Métier: " + artisan.metier;
+        document.getElementById("artisan-contact").textContent = "Contact: " + artisan.contact;
+        document.getElementById("artisan-image").src = artisan.image;
+
+        // Function to create article cards
+        function createArticleCard(article) {
+            return `
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="${article.image}" class="card-img-top" style="height: 250px;" alt="${article.name}">
+                        <div class="card-body">
+                            <h5 class="card-title">${article.name}</h5>
+                            <p class="card-text">Prix: ${article.price}</p>
+                            <p class="card-text">Contact: ${article.contact}</p>
+                            <a href="tel:${article.contact}" class="btn contact-button">Contactez moi</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Insert article cards into the page
+        const articlesList = document.getElementById("articles-list");
+        artisan.articles.forEach(article => {
+            articlesList.innerHTML += createArticleCard(article);
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

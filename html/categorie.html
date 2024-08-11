@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Artisans - Catégorie</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .card img {
+            height: 200px;
+            object-fit: cover;
+        }
+        .card {
+            margin-bottom: 20px;
+        }
+        .card-body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="../image/helpArtisanat.jpg" alt="Logo Help'Artisanat" style="border-radius: 50%; width: 50px; height: 50px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="QSN.html">Qui sommes nous</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="creation.html">Création des artisans</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="recherche.html">Rechercher un artisan</a>
+                </li>
+            </ul>
+            <a href="connexion.html"><button class="btn btn-primary mr-2" type="button">Se connecter</button></a>
+            <a href="inscription.html"><button class="btn btn-outline-primary" type="button">S'identifier</button></a>
+        </div>
+    </header>
+    <h2 class="text-center m-2">Potiers</h2>
+    <div class="container mt-5">
+        <div class="row" id="artisan-list">
+            <!-- Cards will be generated here by JavaScript -->
+        </div>
+    </div>
+
+    <footer class="pt-5 pb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>Help'Artisanat</h5>
+                    <p>
+                        Help'Artisanat est une plateforme dédiée aux artisans. Nous croyons en l'importance de préserver les savoir-faire traditionnels et de soutenir les artisans dans leur démarche créative et entrepreneuriale.
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <h5>INFORMATIONS</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Bons de réduction</a></li>
+                        <li><a href="#" class="text-white">Condition de vente et livraison</a></li>
+                        <li><a href="#" class="text-white">Politique de confidentialité</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contactez-nous</h5>
+                    <ul class="list-unstyled">
+                        <li>Email: contact@helpartisanat-ci.com</li>
+                        <li>Téléphone: +225 00 00 00 00</li>
+                        <li>Adresse: Rue de l'Artisanat, Abidjan, Côte d'Ivoire</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Suivez-nous</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Facebook</a></li>
+                        <li><a href="#" class="text-white">Twitter</a></li>
+                        <li><a href="#" class="text-white">Instagram</a></li>
+                        <li><a href="#" class="text-white">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-6">
+                <div class="col text-center">
+                    <p>&copy; 2024 help’artisanat-ci. Tous droits réservés.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Data for artisans
+        const artisans = [
+            {
+                id: 1,
+                name: "Jean Dupont",
+                city: "Abidjan",
+                contact: "+225 00 00 00 00",
+                image: "https://img.freepik.com/photos-gratuite/portrait-homme-travaillant-du-gres-poterie_23-2151686564.jpg?uid=R99967860&ga=GA1.1.1477675911.1719911554&semt=ais_hybrid"
+            },
+            {
+                id: 2,
+                name: "Kouassi Aya",
+                city: "Bouaké",
+                contact: "+225 11 11 11 11",
+                image: "https://img.freepik.com/photos-premium/femme-travaille-roue-poterie-homme-chemise-blanche_1276913-20260.jpg?uid=R99967860&ga=GA1.1.1477675911.1719911554&semt=ais_hybrid"
+            },
+            {
+                id: 3,
+                name: "Kabore zoumana",
+                city: "Yamoussoukro",
+                contact: "+225 22 22 22 22",
+                image: "https://img.freepik.com/photos-premium/personne-fait-pot-poterie_862994-420921.jpg?uid=R99967860&ga=GA1.1.1477675911.1719911554&semt=ais_hybrid"
+            }
+        ];
+
+        // Function to generate the artisan cards
+        function generateArtisanCards() {
+            const artisanList = document.getElementById('artisan-list');
+
+            artisans.forEach(artisan => {
+                // Create the card element
+                const card = document.createElement('div');
+                card.className = 'col-md-4';
+
+                card.innerHTML = `
+                    <div class="card">
+                        <img src="${artisan.image}" class="card-img-top" alt="${artisan.name}">
+                        <div class="card-body">
+                            <h5 class="card-title">${artisan.name}</h5>
+                            <p class="card-text">Ville: ${artisan.city}</p>
+                            <p class="card-text">Contact: ${artisan.contact}</p>
+                            <a href="detail.html?id=${artisan.id}" class="btn btn-primary">Détail</a>
+                        </div>
+                    </div>
+                `;
+
+                // Append the card to the artisan list
+                artisanList.appendChild(card);
+            });
+        }
+
+        // Call the function to generate the cards on page load
+        window.onload = generateArtisanCards;
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
