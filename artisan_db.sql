@@ -19,7 +19,12 @@ CREATE TABLE artisans (
     specialites VARCHAR(255),
     whatsapp VARCHAR(15),
     mot_de_passe VARCHAR(255) NOT NULL
+    
 );
+
+ALTER TABLE artisans 
+ADD COLUMN certificat ENUM('Oui', 'Non') NOT NULL,
+ADD COLUMN annee_existence INT NOT NULL;
 
 
 CREATE TABLE articles (
@@ -30,3 +35,7 @@ CREATE TABLE articles (
     image VARCHAR(255) NOT NULL,
     date_ajout DATETIME DEFAULT CURRENT_TIMESTAMP
 );
+
+// -- Insertion de l'administrateur par défaut
+INSERT INTO artisans (nom, prenom, sexe, ville, commune, quartier, email, numero, entreprise, secteur, specialites, whatsapp, mot_de_passe)
+VALUES ('Administrateur', 'Super', 'Homme', '', '', '', 'admin@helpartisanat.com', '0172317983', '', '', '', '', 'azerty','', '');

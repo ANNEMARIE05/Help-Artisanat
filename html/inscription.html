@@ -48,7 +48,7 @@
                 </li>
             </ul>
             <a href="connexion.html"><button class="btn btn-primary mr-2" type="button">Se connecter</button></a>
-            <a href="inscription.html"><button class="btn btn-outline-primary" type="button">S'identifier</button></a>
+            <a href="inscription.html"><button class="btn btn-outline-primary" type="button">S'inscrire</button></a>
         </div>
     </header>
 
@@ -168,6 +168,22 @@
                         </div>
 
                     </div>
+                    <div class="form-group">
+                        <label for="certificate">Avez-vous un certificat démontrant votre aptitude à pratiquer ce métier ?</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="certificate" id="certificate-yes" value="Oui" required>
+                            <label class="form-check-label" for="certificate-yes">Oui</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="certificate" id="certificate-no" value="Non" required>
+                            <label class="form-check-label" for="certificate-no">Non</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="year">Année d'existence</label>
+                        <input type="number" class="form-control" id="year" name="year" placeholder="Entrez l'année de création de votre entreprise" required>
+                    </div>
+                    
                     <button type="submit" class="btn btn-primary">S'inscrire</button>
                 </form>
             </div>
